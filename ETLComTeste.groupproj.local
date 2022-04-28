@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/04/28 15:51:20.000.266,C:\Cursos\Solid\OCP\ProjectGroup1.groupproj=C:\Cursos\Solid\OCP\ETLComTeste.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Projetos\ETL_Com_Solid\Test\ETLTests.dproj"/>
+	</Default.Personality>
+</BorlandProject>

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{26B5DFCF-EAEF-4E2D-82B7-018F681CC985}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ETL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\ETLTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ETL">
+        <MSBuild Projects="ETL.dproj"/>
+    </Target>
+    <Target Name="ETL:Clean">
+        <MSBuild Projects="ETL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ETL:Make">
+        <MSBuild Projects="ETL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ETLTests">
+        <MSBuild Projects="Test\ETLTests.dproj"/>
+    </Target>
+    <Target Name="ETLTests:Clean">
+        <MSBuild Projects="Test\ETLTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ETLTests:Make">
+        <MSBuild Projects="Test\ETLTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ETL;ETLTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ETL:Clean;ETLTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ETL:Make;ETLTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
